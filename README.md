@@ -10,10 +10,7 @@ Po trzech tygodniach pracy kod został przyspieszony o 5.51x na 2 Xeonach i o 17
 przygotowania się do największej symulacji domain walls. Największą innowacją było stworzenie dense, symmetric, real eigensolver for the UV2000 co pozwoliło lepiej korzystać z dzeilonej pamięci
 w architekturze SMP niż w gotowych implementacjach
 
-The new eigensolver is currently utilized to great effect in the ExoMol project, which has a complicated SMP 
-pipeline which runs on COSMOS. Recently, a 130,000^2 matrix was diagonalised using 14 nodes on COSMOS in 4.5 hours. 
-The equivalent using ScaLAPACK took 7 hours. The aim is now to test COSMOS 15TB shared-memory limits by analysing 
-650,000^2 matrices, opening up new ExoMol (and other science) frontiers. John Cheng (SGI) has led developments here, 
-with collaborative support from James Briggs.
+Ostatnio komputer COSMOS przy użyciu ulepszonych algorytmów zdiagonalizowal macierz 130,000^2 wprzy użyciu 14 wezlow w 4.5 godziny. 
+To samo uzywajac ScaLAPACK zajelo 7 godzin. Powstal z tego odrebny projekt, ktory jest obecnie rozwijany wykorzystujac 15TB pamieci wspoldzielonej!
 
 http://www.ctc.cam.ac.uk/news/140108_newsitem.php
