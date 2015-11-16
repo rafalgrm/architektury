@@ -1,0 +1,10 @@
+Coraz bardziej popularne staje si obraz w jakosci HD, zwieksza to potrzebne zasoby pamieci, jak rowniez zmusza by znajdowac
+coraz wydajniejsze mozliwosci przetwarzania tych danych. Szczegolnie widac to w uslugach wszelkiego rodzaju broadcastingu.
+
+Firma NEC przeprowadzila research dotyczacy konwersji obrazu z SD do HD. Niestety tak duze ilosci danych przy obecnych systemach
+powoduja dlugi czas liczenia: na procesorach Xeon konwersja 1h filmu z SD do HD zajmuje kilka godzin.
+
+W 2012 roku podjeto probe stworzenia wydajnego oprogramowania do konwersji SD->HD dzialajacego na serwerach firmy wyposazonych w korpcesory Intel Xeon Phi.
+Serwer NECa może zmiescic 2 procesory Intel Xeon E5-2600 wraz z maksymalnie dwoma koprocesorami zamontowanymi na slotach PCIe.
+Daje to mozliwosc wykorzystania 520 watkow w aplikacji.
+
