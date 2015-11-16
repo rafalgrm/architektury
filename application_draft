@@ -8,3 +8,18 @@ W 2012 roku podjeto probe stworzenia wydajnego oprogramowania do konwersji SD->H
 Serwer NECa może zmiescic 2 procesory Intel Xeon E5-2600 wraz z maksymalnie dwoma koprocesorami zamontowanymi na slotach PCIe.
 Daje to mozliwosc wykorzystania 520 watkow w aplikacji.
 
+Dzialanie programu z zalozenia proste: na wejsciu dostajemy ciag klatek. Sprawdzamy roznice pomiedzy sasiadujacymi klatkami zapisujemy je
+jako "movement". Nastepnie superimpozycjonujemy te zmiany tworzac obraz HD. Najwazniejszym celem bylo wiec rozwiazanie problemu jak wykorzystac
+rownolegla egzekucje by zwiekszyc szybkosc wykonania. CEL: realtime conversion!
+
+Jako narzedzia do efektywnej optymalizacji algorytmu przetwarzania obrazu NEC uzyl kompilatora Intel® C++ Composer XE.
+W szczególnosci wykorzystano funckje automatycznej wektoryzacji. Mozna bylo przekazac te prace kompilatorowi ktory sam rozpoznal
+gdzie mozna uzyc wektoryzacji i zoptymalizowal pod tym katem kod. Wyniki byly na tyle satysfakcjonujac, ze nie trzeba bylo korzystac z zaawansowanych 
+opcji optymalizacyjnych kompilatora wymagajacych znajomosci parametrow takich jak zajmowane przez program cache. 
+
+Inna zaleta architektury jest native mode. Dzieki niemu jedyne co potrzebne do przenisienia gotowego kodu na platforme Phi z Xeona jest
+jego rekompilacja. Tak wiec ten sam source code dziala na obu platformach bez potrzeb modyfikacji! (zaleta nad GPU)
+
+Co udalo sie osiagnac:
+- high-speed realtime processing performance (na Xeonie 6fps przy filmie 30fps) po zmianie: 30 fps
+- reduction in workload (3 inżynierów w 1 miesiac) - 1/5 tego co bylo przy podobnym projekcie realizowanym na GPGPU
